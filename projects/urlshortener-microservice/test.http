@@ -1,0 +1,35 @@
+### Prueba a mi API
+POST http://localhost:3000/api/shorturl
+Content-Type: application/json
+
+{
+"url": "https://freeCodeCamp.org"
+}
+
+### Prueba 2 a mi API
+POST http://localhost:3000/api/shorturl
+Content-Type: application/json
+
+{
+"url": "https://simca.unicauca.edu.co/simca/"
+}
+
+### Prueba 3 a mi API
+POST http://localhost:3000/api/shorturl
+Content-Type: application/x-www-form-urlencoded
+
+url=https://simca.unicauca.edu.co/simca/
+
+### Prueba redirect a mi API
+GET http://localhost:3000/api/shorturl/1
+
+### Prueba 2 redirect a mi API
+GET http://localhost:3000/api/shorturl/2
+
+### otra prueba a API externa
+POST https://url-shortener-microservice.freecodecamp.rocks/api/shorturl
+Content-Type: application/json
+
+{
+"url": "https://freeCodeCamp.org"
+}
