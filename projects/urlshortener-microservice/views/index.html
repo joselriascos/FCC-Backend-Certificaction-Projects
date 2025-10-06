@@ -15,7 +15,7 @@
 
       body {
         background: linear-gradient(30deg, black 50%, #242424 100%);
-        min-height: 100dvh;
+        min-height: 100svh;
         font-family: fantasy;
       }
 
@@ -25,7 +25,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 2em 0;
+        padding: 1.5em 0;
         color: #dadada;
         gap: 1em;
         text-align: center;
@@ -43,9 +43,11 @@
         margin: 2em 0;
         text-align: left;
         background-color: rgb(45, 45, 45);
-        padding-right: 1em;
+        padding: 0 1em;
         border-radius: 4px;
-        font-size: 1.05em;
+        font-size: clamp(0.8em, 1em, 1em);
+        max-width: 100%;
+        text-wrap: wrap;
       }
 
       main form {
