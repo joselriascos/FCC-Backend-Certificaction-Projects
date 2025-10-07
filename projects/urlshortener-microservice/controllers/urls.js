@@ -4,7 +4,7 @@ const UrlModel = require('../models/mongoDB/url.js')
 
 class UrlController {
   static async landingPage(req, res) {
-    res.sendFile(path.join(__dirname, '..', 'views', 'index.html'))
+    res.sendFile(path.join(__dirname, '..', 'functions', 'views', 'index.html'))
   }
 
   static async redirectToUrl(req, res) {
