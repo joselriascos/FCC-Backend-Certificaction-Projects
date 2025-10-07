@@ -1,5 +1,7 @@
 const express = require('express')
 const cors = require('cors')
+const serverless = require('serverless-http')
+
 require('dotenv').config()
 
 const UrlController = require('../controllers/urls.js')
@@ -26,6 +28,9 @@ app.post('/api/shorturl/', UrlController.createUrl)
 // app.use(errorHandler)
 
 // Start server
+module.exports.handler = serverless(app)
+
+// For local
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
 })
