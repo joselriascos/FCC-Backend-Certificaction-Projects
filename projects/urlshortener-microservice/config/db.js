@@ -1,16 +1,24 @@
 const mongoose = require('mongoose')
-require('dotenv').config()
-
-const MONGO_CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING
 
 const connectDB = async (dbName) => {
+  if (mongoose.connection.readyState === 1) {
+    // Ya está conectado
+    return mongoose.connection
+  }
+
+  const uri = process.env.MONGO_CONNECTION_STRING
+  if (!uri) throw new Error('❌ MONGO_CONNECTION_STRING not found in .env')
+
   try {
-    await mongoose.connect(MONGO_CONNECTION_STRING, {
-      dbName: dbName,
+    await mongoose.connect(uri, {
+      dbName,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     })
-    console.log('Connected to DB')
+    console.log('✅ Connected to MongoDB Atlas')
   } catch (err) {
-    console.log(err)
+    console.error('❌ MongoDB connection error:', err.message)
+    throw err
   }
 }
 
