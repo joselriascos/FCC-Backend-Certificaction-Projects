@@ -1,7 +1,6 @@
 const path = require('path')
 
-const UrlModel = require('../models/local/url')
-const { STATUS } = require('../utils/consts')
+const UrlModel = require('../models/mongoDB/url.js')
 
 class UrlController {
   static async landingPage(req, res) {
@@ -20,13 +19,9 @@ class UrlController {
     const { url } = req.body
     const result = await UrlModel.createUrl({ url })
 
-    if (result.status === STATUS.INVALID_URL)
-      return res.json({ error: STATUS.INVALID_URL })
+    if (!result) return res.json({ error: 'invalid url' })
 
-    if (result.status === STATUS.URL_ALREADY_SAVED)
-      return res.json(result.object)
-
-    if (result.status === STATUS.URL_CREATED) return res.json(result.object)
+    return res.json(result)
   }
 }
 

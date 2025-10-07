@@ -1,13 +1,16 @@
 const express = require('express')
 const cors = require('cors')
-const dotenv = require('dotenv')
+require('dotenv').config()
 
-const UrlController = require('../controllers/urls')
-
-dotenv.config()
+const UrlController = require('../controllers/urls.js')
+const connectDB = require('../config/db.js')
+const errorHandler = require('../middlewares/errorHandler.js')
 
 const app = express()
 const PORT = process.env.PORT || 0
+
+// Conect to DB
+connectDB('shortener')
 
 // Middlewares
 app.use(cors())
@@ -18,6 +21,9 @@ app.use(express.urlencoded({ extended: true }))
 app.get('/', UrlController.landingPage)
 app.get('/api/shorturl/:shorturl', UrlController.redirectToUrl)
 app.post('/api/shorturl/', UrlController.createUrl)
+
+// Global error handler middleware
+// app.use(errorHandler)
 
 // Start server
 app.listen(PORT, () => {
