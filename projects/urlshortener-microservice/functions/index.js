@@ -11,13 +11,16 @@ const errorHandler = require('../middlewares/errorHandler.js')
 const app = express()
 const PORT = process.env.PORT || 0
 
-// Conect to DB
-connectDB('shortener')
-
 // Middlewares
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+// Conect to DB
+app.use(async (req, res, next) => {
+  await connectDB('shortener')
+  next()
+})
 
 // Routes
 app.get('/', UrlController.landingPage)
