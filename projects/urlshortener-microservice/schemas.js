@@ -3,10 +3,11 @@ const z = require('zod')
 const Url = z.url()
 
 const validateUrl = (url) => {
-  const result = Url.safeParse(url)
+  const isZodVaild = Url.safeParse(url)
+  const followsFCCFormat = /^https?:\/\/(www\.)?.+\..+/.test(url)
 
-  if (result.success) return true
-  return false
+  if (!isZodVaild.success || !followsFCCFormat) return false
+  return true
 }
 
 module.exports = validateUrl

@@ -20,6 +20,18 @@ Content-Type: application/x-www-form-urlencoded
 
 url=https://simca.unicauca.edu.co/simca/
 
+### Prueba Invalid Url a mi API
+POST http://localhost:3000/api/shorturl
+Content-Type: application/x-www-form-urlencoded
+
+url=www.google.com
+
+### Prueba en producción
+POST https://joselriascos-urlshortener.netlify.app/api/shorturl
+Content-Type: application/x-www-form-urlencoded
+
+url=asdasdasd
+
 ### Prueba redirect a mi API
 GET http://localhost:3000/api/shorturl/2
 
