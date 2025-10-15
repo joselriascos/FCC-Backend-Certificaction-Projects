@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import serverless from 'serverless-http'
 import { randomUUID } from 'crypto'
 import logs from '../logs.json' with { type: 'json' }
 
@@ -117,6 +118,8 @@ app.get('/api/users/:id/logs', (req, res) => {
   })
 })
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Server running on http://localhost:${port}`)
+// })
+
+export default handler = serverless(app)
