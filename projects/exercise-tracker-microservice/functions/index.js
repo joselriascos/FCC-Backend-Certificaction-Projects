@@ -22,12 +22,12 @@ app.get('/', (req, res) => {
 app.get('/api/users', (req, res) => {
   // Returns all users
 
-  res.json([
+  res.json(
     logs.map((log) => {
       const { _id, username } = log
       return { _id, username }
-    }),
-  ])
+    })
+  )
 })
 
 app.post('/api/users/:id/exercises', (req, res) => {
