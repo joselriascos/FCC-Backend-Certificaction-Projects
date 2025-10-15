@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import serverless from 'serverless-http'
 import { randomUUID } from 'crypto'
 import logs from '../logs.json' with { type: 'json' }
+import { validateUser } from '../schemas'
 
 dotenv.config()
 
@@ -63,7 +64,11 @@ app.post('/api/users/:id/exercises', (req, res) => {
 })
 
 app.post('/api/users', (req, res) => {
-  const { username } = req.body
+  const validation = validateUser(req.body)
+
+  if (!validation) return res.status(400).json({ error: 'Invalid user' })
+
+  const { username } = validation.data
 
   const user = logs.find((log) => log.username === username)
 
@@ -90,7 +95,11 @@ app.post('/api/users', (req, res) => {
 
 app.get('/api/users/:id/logs', (req, res) => {
   const { id } = req.params
-  const { from, to, limit } = req.query
+  const validation = validateQuery(req.query)
+
+  if (!validation) return res.status(400).json({ error: 'Invalid query' })
+
+  const { from, to, limit } = validation.data
 
   const user = logs.find((log) => log._id === id)
 
