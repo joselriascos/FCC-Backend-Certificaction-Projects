@@ -1,8 +1,8 @@
 ### GET USERS -> returns all users
-GET https://joselriascos-exercise-tracker.netlify.app/api/users
+GET https://exercise-tracker.freecodecamp.rocks/api/users
 
 ### POST USER -> add a new user or returns it if exists
-POST https://joselriascos-exercise-tracker.netlify.app/api/users
+POST https://exercise-tracker.freecodecamp.rocks/api/users
 Content-Type: application/json
 
 {
@@ -10,10 +10,10 @@ Content-Type: application/json
 }
 
 ### GET USERS -> returns all users
-GET https://joselriascos-exercise-tracker.netlify.app/api/users
+GET https://exercise-tracker.freecodecamp.rocks/api/users
 
 ### POST EXERCISE
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+POST https://exercise-tracker.freecodecamp.rocks/api/users/67e394227673e60013e15487/exercises
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
 }
 
 ### POST EXERCISE user non existing
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/a/exercises
+POST https://exercise-tracker.freecodecamp.rocks/api/users/a/exercises
 Content-Type: application/json
 
 {
@@ -31,7 +31,7 @@ Content-Type: application/json
 }
 
 ### POST EXERCISE with date
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+POST https://exercise-tracker.freecodecamp.rocks/api/users/67e394227673e60013e15487/exercises
 Content-Type: application/json
 
 {
@@ -41,7 +41,7 @@ Content-Type: application/json
 }
 
 ### POST EXERCISE with date
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+POST https://exercise-tracker.freecodecamp.rocks/api/users/67e394227673e60013e15487/exercises
 Content-Type: application/json
 
 {
@@ -51,7 +51,7 @@ Content-Type: application/json
 }
 
 ### POST EXERCISE with date
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+POST https://exercise-tracker.freecodecamp.rocks/api/users/67e394227673e60013e15487/exercises
 Content-Type: application/json
 
 {
@@ -61,7 +61,7 @@ Content-Type: application/json
 }
 
 ### GET ALL LOGS for c9517175-fa7a-4243-b7f8-8e04956ccd0e
-GET https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/logs
+GET https://exercise-tracker.freecodecamp.rocks/api/users/67e394227673e60013e15487/logs
 
 ### GET 2 LOGS for c9517175-fa7a-4243-b7f8-8e04956ccd0e from 01-01-2025 to 31-12-2025
-GET https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/logs?from=2025-01-01&to=2025-12-31&limit=0
+GET https://exercise-tracker.freecodecamp.rocks/api/users/67e394227673e60013e15487/logs?from=2025-01-01&to=2025-12-31&limit=2
