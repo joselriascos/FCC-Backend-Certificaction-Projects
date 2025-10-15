@@ -25,7 +25,7 @@ app.get('/api/users', (req, res) => {
   res.json(
     logs.map((log) => {
       const { _id, username } = log
-      return { _id, username }
+      return { username: username, _id: _id }
     })
   )
 })
