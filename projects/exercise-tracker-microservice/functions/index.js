@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 import serverless from 'serverless-http'
 import { randomUUID } from 'crypto'
 import logs from '../logs.json' with { type: 'json' }
-import { validateUser } from '../schemas'
+import { validateQuery, validateUser } from '../schemas'
 
 dotenv.config()
 

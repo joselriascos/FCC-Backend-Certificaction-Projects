@@ -9,11 +9,19 @@ Content-Type: application/json
     "username": "Camilo"
 }
 
+### POST USER -> add a new user or returns it if exists
+POST https://joselriascos-exercise-tracker.netlify.app/api/users
+Content-Type: application/json
+
+{
+    "username": "Jose"
+}
+
 ### GET USERS -> returns all users
 GET https://joselriascos-exercise-tracker.netlify.app/api/users
 
 ### POST EXERCISE
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+POST https://joselriascos-exercise-tracker.netlify.app/api/users/d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1/exercises
 Content-Type: application/json
 
 {
@@ -31,7 +39,7 @@ Content-Type: application/json
 }
 
 ### POST EXERCISE with date
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+POST https://joselriascos-exercise-tracker.netlify.app/api/users/d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1/exercises
 Content-Type: application/json
 
 {
@@ -41,7 +49,7 @@ Content-Type: application/json
 }
 
 ### POST EXERCISE with date
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+POST https://joselriascos-exercise-tracker.netlify.app/api/users/d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1/exercises
 Content-Type: application/json
 
 {
@@ -51,7 +59,7 @@ Content-Type: application/json
 }
 
 ### POST EXERCISE with date
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+POST https://joselriascos-exercise-tracker.netlify.app/api/users/d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1/exercises
 Content-Type: application/json
 
 {
@@ -60,8 +68,8 @@ Content-Type: application/json
     "date": "2023-08-26"
 }
 
-### GET ALL LOGS for c9517175-fa7a-4243-b7f8-8e04956ccd0e
-GET https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/logs
+### GET ALL LOGS for d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1
+GET https://joselriascos-exercise-tracker.netlify.app/api/users/d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1/logs
 
-### GET 2 LOGS for c9517175-fa7a-4243-b7f8-8e04956ccd0e from 01-01-2025 to 31-12-2025
-GET https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/logs?from=2025-01-01&to=2025-12-31&limit=0
+### GET 2 LOGS for d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1 from 01-01-2025 to 31-12-2025
+GET https://joselriascos-exercise-tracker.netlify.app/api/users/d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1/logs?from=2025-01-01&to=2025-12-31&limit=0
