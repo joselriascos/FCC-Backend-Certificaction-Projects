@@ -82,7 +82,7 @@ app.post('/api/users', (req, res) => {
     username: newUser.username,
     count: 0,
     _id: newUser._id,
-    logs: [],
+    log: [],
   })
 
   res.json(newUser)

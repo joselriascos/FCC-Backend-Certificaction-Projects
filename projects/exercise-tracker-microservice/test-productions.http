@@ -1,0 +1,67 @@
+### GET USERS -> returns all users
+GET https://joselriascos-exercise-tracker.netlify.app/api/users
+
+### POST USER -> add a new user or returns it if exists
+POST https://joselriascos-exercise-tracker.netlify.app/api/users
+Content-Type: application/json
+
+{
+    "username": "Camilo"
+}
+
+### GET USERS -> returns all users
+GET https://joselriascos-exercise-tracker.netlify.app/api/users
+
+### POST EXERCISE
+POST https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+Content-Type: application/json
+
+{
+    "description": "Jumping Jacks",
+    "duration": 2
+}
+
+### POST EXERCISE user non existing
+POST https://joselriascos-exercise-tracker.netlify.app/api/users/a/exercises
+Content-Type: application/json
+
+{
+    "description": "Jumping Jacks",
+    "duration": 2
+}
+
+### POST EXERCISE with date
+POST https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+Content-Type: application/json
+
+{
+    "description": "Jumping Jacks",
+    "duration": 8,
+    "date": "2025-08-28"
+}
+
+### POST EXERCISE with date
+POST https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+Content-Type: application/json
+
+{
+    "description": "Soccer",
+    "duration": 90,
+    "date": "2025-08-26"
+}
+
+### POST EXERCISE with date
+POST https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+Content-Type: application/json
+
+{
+    "description": "Basketball",
+    "duration": 60,
+    "date": "2023-08-26"
+}
+
+### GET ALL LOGS for c9517175-fa7a-4243-b7f8-8e04956ccd0e
+GET https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/logs
+
+### GET 2 LOGS for c9517175-fa7a-4243-b7f8-8e04956ccd0e from 01-01-2025 to 31-12-2025
+GET https://joselriascos-exercise-tracker.netlify.app/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/logs?from=2025-01-01&to=2025-12-31&limit=2
