@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 import serverless from 'serverless-http'
 import { randomUUID } from 'crypto'
 import logs from '../logs.json' with { type: 'json' }
-import { validateQuery, validateUser } from '../schemas'
+import { validateExercise, validateQuery, validateUser } from '../schemas'
 
 dotenv.config()
 
@@ -33,7 +33,12 @@ app.get('/api/users', (req, res) => {
 
 app.post('/api/users/:id/exercises', (req, res) => {
   const { id } = req.params
-  const { description, duration, date } = req.body
+  const validation = validateExercise(req.body)
+
+  if (!validation.success)
+    return res.status(400).json({ error: 'Invalid exercise' })
+
+  const { description, duration, date } = validation.data
 
   const logIndex = logs.findIndex((log) => log._id === id)
 
@@ -66,7 +71,8 @@ app.post('/api/users/:id/exercises', (req, res) => {
 app.post('/api/users', (req, res) => {
   const validation = validateUser(req.body)
 
-  if (!validation) return res.status(400).json({ error: 'Invalid user' })
+  if (!validation.success)
+    return res.status(400).json({ error: 'Invalid user' })
 
   const { username } = validation.data
 
@@ -97,7 +103,8 @@ app.get('/api/users/:id/logs', (req, res) => {
   const { id } = req.params
   const validation = validateQuery(req.query)
 
-  if (!validation) return res.status(400).json({ error: 'Invalid query' })
+  if (!validation.success)
+    return res.status(400).json({ error: 'Invalid query' })
 
   const { from, to, limit } = validation.data
 
