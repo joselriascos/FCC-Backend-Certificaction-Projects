@@ -32,8 +32,8 @@ app.post('/api/users/:id/exercises', addLog)
 app.post('/api/users', addUser)
 app.get('/api/users/:id/logs', getLogs)
 
-// export const handler = serverless(app)
+export const handler = serverless(app)
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Server is running on http://localhost:${port}`)
+// })
