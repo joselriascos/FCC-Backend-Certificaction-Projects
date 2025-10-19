@@ -6,6 +6,32 @@ Content-Type: application/json
     "username": "Jose"
 }
 
+### Add a user
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "username": "Daniel"
+}
+
+### Add a user
+POST http://localhost:3000/api/users
+Content-Type: application/x-www-form-urlencoded
+
+username=Diana
+
+### Add a user
+POST http://localhost:3000/api/users
+Content-Type: application/x-www-form-urlencoded
+
+username=Luis
+
+### Add a user
+POST http://localhost:3000/api/users
+Content-Type: application/x-www-form-urlencoded
+
+username=Carlos
+
 ### Add exercise
 POST http://localhost:3000/api/users/68f445a8854f8ac2882fe422/exercises
 Content-Type: application/json

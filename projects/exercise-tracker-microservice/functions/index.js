@@ -25,6 +25,7 @@ app.use(async (req, res, next) => {
 // Middlewares
 app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 app.get('/', showHome)
 app.get('/api/users', getUsers)
