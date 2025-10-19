@@ -113,7 +113,16 @@ export const getLogs = async (req, res) => {
     if (!user) return res.status(404).json({ error: 'User not found' })
 
     if (!from && !to && !limit) {
-      return res.json(user.toObject())
+      const formattedLogs = user.log.map((log) => {
+        return {
+          ...log.toObject(),
+          date: new Date(log.date).toDateString(),
+        }
+      })
+      return res.json({
+        ...user.toObject(),
+        log: formattedLogs,
+      })
     }
 
     const fromData = from ? new Date(from) : new Date(0)
