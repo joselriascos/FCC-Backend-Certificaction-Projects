@@ -1,75 +1,57 @@
-### GET USERS -> returns all users
-GET https://joselriascos-exercise-tracker.netlify.app/api/users
-
-### POST USER -> add a new user or returns it if exists
-POST https://joselriascos-exercise-tracker.netlify.app/api/users
-Content-Type: application/json
-
-{
-    "username": "Camilo"
-}
-
-### POST USER -> add a new user or returns it if exists
-POST https://joselriascos-exercise-tracker.netlify.app/api/users
+### Add a user
+POST https://joselriascos-exercise-tracker.netlify.app//api/users
 Content-Type: application/json
 
 {
     "username": "Jose"
 }
 
-### GET USERS -> returns all users
-GET https://joselriascos-exercise-tracker.netlify.app/api/users
-
-### POST EXERCISE
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1/exercises
+### Add exercise
+POST https://joselriascos-exercise-tracker.netlify.app//api/users/68f445a8854f8ac2882fe422/exercises
 Content-Type: application/json
 
 {
-    "description": "Jumping Jacks",
-    "duration": 2
+    "description": "algo",
+    "duration": 5
 }
 
-### POST EXERCISE user non existing
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/a/exercises
+### Add exercise with date
+POST https://joselriascos-exercise-tracker.netlify.app//api/users/68f445a8854f8ac2882fe422/exercises
 Content-Type: application/json
 
 {
-    "description": "Jumping Jacks",
-    "duration": 2
-}
-
-### POST EXERCISE with date
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1/exercises
-Content-Type: application/json
-
-{
-    "description": "Jumping Jacks",
-    "duration": 8,
+    "description": "otra cosa",
+    "duration": 15,
     "date": "2025-08-28"
 }
 
-### POST EXERCISE with date
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1/exercises
+### Add user
+POST https://joselriascos-exercise-tracker.netlify.app//api/users
 Content-Type: application/json
 
 {
-    "description": "Soccer",
-    "duration": 90,
-    "date": "2025-08-26"
+    "username": "Diego"
 }
 
-### POST EXERCISE with date
-POST https://joselriascos-exercise-tracker.netlify.app/api/users/d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1/exercises
+### Add user
+POST https://joselriascos-exercise-tracker.netlify.app//api/users
 Content-Type: application/json
 
 {
-    "description": "Basketball",
-    "duration": 60,
-    "date": "2023-08-26"
+    "username": "Valen"
 }
 
-### GET ALL LOGS for d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1
-GET https://joselriascos-exercise-tracker.netlify.app/api/users/d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1/logs
+### Get users
+GET https://joselriascos-exercise-tracker.netlify.app//api/users
 
-### GET 2 LOGS for d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1 from 01-01-2025 to 31-12-2025
-GET https://joselriascos-exercise-tracker.netlify.app/api/users/d7a9ea2b-d248-4fbc-b3d9-aa9747fcf3f1/logs?from=2025-01-01&to=2025-12-31&limit=0
+### Get logs
+GET https://joselriascos-exercise-tracker.netlify.app//api/users/68f445a8854f8ac2882fe422/logs
+
+### Get logs with query
+GET https://joselriascos-exercise-tracker.netlify.app//api/users/68f445a8854f8ac2882fe422/logs?limit=1
+
+### Get logs with query
+GET https://joselriascos-exercise-tracker.netlify.app//api/users/68f445a8854f8ac2882fe422/logs?from=2025-10-20
+
+### Get logs with query
+GET https://joselriascos-exercise-tracker.netlify.app//api/users/68f445a8854f8ac2882fe422/logs?from=2025-10-1

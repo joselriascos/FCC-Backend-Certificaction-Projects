@@ -1,67 +1,57 @@
-### GET USERS -> returns all users
-GET http://localhost:3000/api/users
-
-### POST USER -> add a new user or returns it if exists
+### Add a user
 POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "username": "Camilo"
+    "username": "Jose"
 }
 
-### GET USERS -> returns all users
-GET http://localhost:3000/api/users
-
-### POST EXERCISE
-POST http://localhost:3000/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+### Add exercise
+POST http://localhost:3000/api/users/68f445a8854f8ac2882fe422/exercises
 Content-Type: application/json
 
 {
-    "description": "Jumping Jacks",
-    "duration": 2
+    "description": "algo",
+    "duration": 5
 }
 
-### POST EXERCISE user non existing
-POST http://localhost:3000/api/users/a/exercises
+### Add exercise with date
+POST http://localhost:3000/api/users/68f445a8854f8ac2882fe422/exercises
 Content-Type: application/json
 
 {
-    "description": "Jumping Jacks",
-    "duration": 2
-}
-
-### POST EXERCISE with date
-POST http://localhost:3000/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
-Content-Type: application/json
-
-{
-    "description": "Jumping Jacks",
-    "duration": 8,
+    "description": "otra cosa",
+    "duration": 15,
     "date": "2025-08-28"
 }
 
-### POST EXERCISE with date
-POST http://localhost:3000/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+### Add user
+POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "description": "Soccer",
-    "duration": 90,
-    "date": "2025-08-26"
+    "username": "Diego"
 }
 
-### POST EXERCISE with date
-POST http://localhost:3000/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/exercises
+### Add user
+POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "description": "Basketball",
-    "duration": 60,
-    "date": "2023-08-26"
+    "username": "Valen"
 }
 
-### GET ALL LOGS for c9517175-fa7a-4243-b7f8-8e04956ccd0e
-GET http://localhost:3000/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/logs
+### Get users
+GET http://localhost:3000/api/users
 
-### GET 2 LOGS for c9517175-fa7a-4243-b7f8-8e04956ccd0e from 01-01-2025 to 31-12-2025
-GET http://localhost:3000/api/users/c9517175-fa7a-4243-b7f8-8e04956ccd0e/logs?from=2025-01-01&to=2025-12-31&limit=2
+### Get logs
+GET http://localhost:3000/api/users/68f445a8854f8ac2882fe422/logs
+
+### Get logs with query
+GET http://localhost:3000/api/users/68f445a8854f8ac2882fe422/logs?limit=1
+
+### Get logs with query
+GET http://localhost:3000/api/users/68f445a8854f8ac2882fe422/logs?from=2025-10-20
+
+### Get logs with query
+GET http://localhost:3000/api/users/68f445a8854f8ac2882fe422/logs?from=2025-10-1

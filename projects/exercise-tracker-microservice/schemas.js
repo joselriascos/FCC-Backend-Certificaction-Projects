@@ -13,7 +13,7 @@ const exerciseSchema = z.object({
 const querySchema = z.object({
   from: z.string().optional(),
   to: z.string().optional(),
-  limit: z.number().optional(),
+  limit: z.string().optional(),
 })
 
 export const validateUser = (user) => {
