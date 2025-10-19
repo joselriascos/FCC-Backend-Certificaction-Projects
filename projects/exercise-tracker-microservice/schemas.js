@@ -6,7 +6,7 @@ const userSchema = z.object({
 
 const exerciseSchema = z.object({
   description: z.string(),
-  duration: z.number(),
+  duration: z.union([z.string(), z.number()]),
   date: z.string().optional(),
 })
 

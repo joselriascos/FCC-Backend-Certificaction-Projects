@@ -41,6 +41,12 @@ Content-Type: application/json
     "duration": 5
 }
 
+### Add exercise
+POST http://localhost:3000/api/users/68f445a8854f8ac2882fe422/exercises
+Content-Type: application/x-www-form-urlencoded
+
+description=running&duration=20
+
 ### Add exercise with date
 POST http://localhost:3000/api/users/68f445a8854f8ac2882fe422/exercises
 Content-Type: application/json

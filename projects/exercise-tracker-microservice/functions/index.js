@@ -35,6 +35,6 @@ app.get('/api/users/:id/logs', getLogs)
 
 export const handler = serverless(app)
 
-// app.listen(port, () => {
-//   console.log(`Server is running on http://localhost:${port}`)
-// })
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`)
+})

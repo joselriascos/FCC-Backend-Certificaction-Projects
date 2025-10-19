@@ -33,6 +33,7 @@ export const addLog = async (req, res) => {
   try {
     const user = await UserModel.findOne({ _id: id })
     if (!user) return res.status(404).json({ error: 'User not found' })
+      
     const newDate = date ? new Date(date + 'T00:00:00') : new Date()
 
     const newLog = {
