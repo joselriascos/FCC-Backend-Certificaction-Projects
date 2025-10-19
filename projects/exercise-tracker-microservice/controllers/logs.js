@@ -9,7 +9,7 @@ export const showHome = (req, res) => {
 export const getUsers = async (req, res) => {
   // Returns all the users
   try {
-    const users = await UserModel.find()
+    const users = await UserModel.find().select('username _id')
     if (users) return res.json(users)
     return res.status(404).json({ message: 'Users not found' })
   } catch (error) {
@@ -66,7 +66,9 @@ export const addUser = async (req, res) => {
   const { username } = validation.data
 
   try {
-    const user = await UserModel.findOne({ username: username })
+    const user = await UserModel.findOne({ username: username }).select(
+      'username _id'
+    )
 
     if (user) return res.json(user)
 

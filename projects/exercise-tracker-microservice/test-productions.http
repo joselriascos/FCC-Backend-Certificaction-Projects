@@ -1,5 +1,5 @@
 ### Add a user
-POST https://joselriascos-exercise-tracker.netlify.app//api/users
+POST https://joselriascos-exercise-tracker.netlify.app/api/users
 Content-Type: application/json
 
 {
@@ -7,7 +7,7 @@ Content-Type: application/json
 }
 
 ### Add exercise
-POST https://joselriascos-exercise-tracker.netlify.app//api/users/68f445a8854f8ac2882fe422/exercises
+POST https://joselriascos-exercise-tracker.netlify.app/api/users/68f445a8854f8ac2882fe422/exercises
 Content-Type: application/json
 
 {
@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ### Add exercise with date
-POST https://joselriascos-exercise-tracker.netlify.app//api/users/68f445a8854f8ac2882fe422/exercises
+POST https://joselriascos-exercise-tracker.netlify.app/api/users/68f445a8854f8ac2882fe422/exercises
 Content-Type: application/json
 
 {
@@ -26,7 +26,7 @@ Content-Type: application/json
 }
 
 ### Add user
-POST https://joselriascos-exercise-tracker.netlify.app//api/users
+POST https://joselriascos-exercise-tracker.netlify.app/api/users
 Content-Type: application/json
 
 {
@@ -34,7 +34,7 @@ Content-Type: application/json
 }
 
 ### Add user
-POST https://joselriascos-exercise-tracker.netlify.app//api/users
+POST https://joselriascos-exercise-tracker.netlify.app/api/users
 Content-Type: application/json
 
 {
@@ -42,16 +42,16 @@ Content-Type: application/json
 }
 
 ### Get users
-GET https://joselriascos-exercise-tracker.netlify.app//api/users
+GET https://joselriascos-exercise-tracker.netlify.app/api/users
 
 ### Get logs
-GET https://joselriascos-exercise-tracker.netlify.app//api/users/68f445a8854f8ac2882fe422/logs
+GET https://joselriascos-exercise-tracker.netlify.app/api/users/68f445a8854f8ac2882fe422/logs
 
 ### Get logs with query
-GET https://joselriascos-exercise-tracker.netlify.app//api/users/68f445a8854f8ac2882fe422/logs?limit=1
+GET https://joselriascos-exercise-tracker.netlify.app/api/users/68f445a8854f8ac2882fe422/logs?limit=1
 
 ### Get logs with query
-GET https://joselriascos-exercise-tracker.netlify.app//api/users/68f445a8854f8ac2882fe422/logs?from=2025-10-20
+GET https://joselriascos-exercise-tracker.netlify.app/api/users/68f445a8854f8ac2882fe422/logs?from=2025-10-20
 
 ### Get logs with query
-GET https://joselriascos-exercise-tracker.netlify.app//api/users/68f445a8854f8ac2882fe422/logs?from=2025-10-1
+GET https://joselriascos-exercise-tracker.netlify.app/api/users/68f445a8854f8ac2882fe422/logs?from=2025-10-1
