@@ -58,6 +58,9 @@ export const addLog = async (req, res) => {
 
 export const addUser = async (req, res) => {
   // Add new user and returns the new user added. If user already exists returns that user
+  if (!req.body.username)
+    return res.status(400).json({ error: 'Username required' })
+
   const validation = validateUser({ username: req.body.username })
 
   if (!validation.success)
@@ -79,6 +82,7 @@ export const addUser = async (req, res) => {
     }
 
     const createdUser = await UserModel.create(newLog)
+
     return res.json({
       username: createdUser.username,
       _id: createdUser._id,
