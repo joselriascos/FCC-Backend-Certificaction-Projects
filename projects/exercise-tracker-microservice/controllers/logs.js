@@ -20,7 +20,11 @@ export const getUsers = async (req, res) => {
 export const addLog = async (req, res) => {
   // Add new log to an existing user and returns the new exercise added
   const { id } = req.params
-  const validation = validateExercise(req.body)
+  const validation = validateExercise({
+    description: req.body.description,
+    duration: req.body.duration,
+    date: req.body.date,
+  })
 
   if (!validation.success)
     return res.status(400).json({ error: 'Invalid exercise' })
