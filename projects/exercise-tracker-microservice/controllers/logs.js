@@ -1,3 +1,4 @@
+import { date } from 'zod'
 import UserModel from '../models/logs.js'
 import { validateExercise, validateQuery, validateUser } from '../schemas.js'
 
@@ -33,7 +34,7 @@ export const addLog = async (req, res) => {
   try {
     const user = await UserModel.findOne({ _id: id })
     if (!user) return res.status(404).json({ error: 'User not found' })
-      
+
     const newDate = date ? new Date(date + 'T00:00:00') : new Date()
 
     const newLog = {
@@ -125,6 +126,12 @@ export const getLogs = async (req, res) => {
         return logDate >= fromData && logDate <= toData
       })
       .slice(0, limitData === 0 ? user.log.length : limitData)
+      .map((log) => {
+        return {
+          ...log.toObject(),
+          date: new Date(log.date).toDateString(),
+        }
+      })
 
     return res.json({
       ...user.toObject(),
