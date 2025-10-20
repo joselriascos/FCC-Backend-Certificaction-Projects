@@ -9,6 +9,6 @@ fileRouter.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'views', 'index.html'))
 })
 
-fileRouter.post('/upload', upload.single('upfile'), uploadFile)
+fileRouter.post('/api/fileanalyse', upload.single('upfile'), uploadFile)
 
 module.exports = fileRouter
