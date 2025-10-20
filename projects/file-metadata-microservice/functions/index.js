@@ -1,8 +1,8 @@
-import express from 'express'
-import dotenv from 'dotenv'
-import cors from 'cors'
-import serverless from 'serverless-http'
-import fileRouter from '../routes/fileRoutes.js'
+const express = require('express')
+const dotenv = require('dotenv')
+const cors = require('cors')
+const serverless = require('serverless-http')
+const fileRouter = require('../routes/fileRoutes.js')
 
 dotenv.config()
 
@@ -18,7 +18,7 @@ app.use(express.json())
 app.use('/', fileRouter)
 
 // Serverless
-export const handler = serverless(app)
+module.exports.handler = serverless(app)
 
 // Local
 app.listen(port, () => {

@@ -1,19 +1,14 @@
-import express from 'express'
-import path from 'path'
-import upload from '../config/multerConfig.js'
-import { uploadFile } from '../controllers/fileController.js'
-import { fileURLToPath } from 'url'
+const express = require('express')
+const upload = require('../config/multerConfig.js')
+const { uploadFile } = require('../controllers/fileController.js')
+const path = require('path')
 
 const fileRouter = express.Router()
 
-// const __filename = fileURLToPath(import.meta.url)
-// const __dirname = path.dirname(__filename)
-
 fileRouter.get('/', (req, res) => {
-  // res.sendFile(path.join(__dirname, '..', 'views', 'index.html'))
-  res.json({ message: 'Hello World' })
+  res.sendFile(path.join(__dirname, '..', 'views', 'index.html'))
 })
 
 fileRouter.post('/upload', upload.single('upfile'), uploadFile)
 
-export default fileRouter
+module.exports = fileRouter

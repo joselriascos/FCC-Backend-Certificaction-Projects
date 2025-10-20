@@ -1,4 +1,4 @@
-export const uploadFile = (req, res) => {
+const uploadFile = (req, res) => {
   const { file } = req
 
   if (!file) return res.status(400).json('No file uploaded')
@@ -9,3 +9,5 @@ export const uploadFile = (req, res) => {
     size: file.size,
   })
 }
+
+module.exports = { uploadFile }
