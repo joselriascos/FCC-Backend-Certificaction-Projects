@@ -6,3 +6,4 @@ Backend projects to claim FCC Backend Certification
 - Request Header Parser Microservice [✅]
 - Url Shortener Microservice [✅]
 - Exercise Tracker Microservice [✅]
+- File Metadata Microservice [✅]

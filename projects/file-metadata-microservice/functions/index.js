@@ -9,11 +9,17 @@ const app = express()
 
 const port = process.env.PORT || 0
 
+// Middlewares
 app.use(cors())
 app.use(express.json())
 
-app.use("/", fileRouter)
+// Routes
+app.use('/', fileRouter)
 
+// Serverless
+export const handler = serverless(app)
+
+// Local
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
 })
