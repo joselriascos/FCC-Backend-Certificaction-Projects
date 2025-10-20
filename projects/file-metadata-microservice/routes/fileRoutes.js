@@ -6,7 +6,7 @@ import { uploadFile } from '../controllers/fileController.js'
 const fileRouter = express.Router()
 
 fileRouter.get('/', (req, res) => {
-  res.sendFile(path.join(import.meta.dirname, '..', 'views', 'index.html'))
+  res.sendFile(path.join(import.meta.url, '..', 'views', 'index.html'))
 })
 
 fileRouter.post('/upload', upload.single('upfile'), uploadFile)
