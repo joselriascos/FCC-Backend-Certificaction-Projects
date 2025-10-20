@@ -4,7 +4,7 @@ export const uploadFile = (req, res) => {
   if (!file) return res.status(400).json('No file uploaded')
 
   res.json({
-    name: file.filename,
+    name: file.originalname,
     type: file.mimetype,
     size: file.size,
   })
