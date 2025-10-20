@@ -2,7 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import serverless from 'serverless-http'
-import fileRouter from '../routes/fileRoutes.cjs'
+import fileRouter from '../routes/fileRoutes.js'
 
 dotenv.config()
 
